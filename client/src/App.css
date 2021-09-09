@@ -63,10 +63,37 @@ th {
   padding: 20px;
 }
 
-.nav {
-  background-color:rgb(255, 167, 254);
-  border: darkblue 3px solid;
-  border-radius: 5px;
-  padding-bottom: 20px;
+.bcolor1 {
+  background-color: #9DFBBB;
 }
+.bcolor2 {
+  background-color: #76CCB8;
+}
+.bcolor3 {
+  background-color: #457484;
+}
+.bcolor4 {
+  background-color: #225F78;
+}
+.bcolor5 {
+  background-color: #1A92A7;
+}
+
+.color1 {
+  color: #9DFBBB;
+}
+.color2 {
+  color: #76CCB8;
+}
+.color3 {
+  color: #457484;
+}
+.color4 {
+  color: #225F78;
+}
+.color5 {
+  color: #1A92A7;
+}
+
+
 
