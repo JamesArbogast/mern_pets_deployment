@@ -11,6 +11,6 @@ module.exports = (pets_api) => {
             console.log(`Successfully connected to ${pets_api}`);
         })
         .catch((err) => {
-            console.log(`mongoose connection to ${petss_api} failed:`, err);
+            console.log(`mongoose connection to ${pets_api} failed:`, err);
         });
 };
