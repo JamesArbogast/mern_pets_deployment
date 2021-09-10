@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, navigate } from "@reach/router";
 import "../App.css"
+import Dog from '../Img/dog150.png'
 
 const Pets = (props) => {
     const [pets, setPets] = useState([]);
@@ -37,30 +38,24 @@ const Pets = (props) => {
     };
 
     return (
-        <div className={"table"}>
-        <h3 style={{marginLeft: "85px", fontSize: "30px"}}>These pets are looking for a shelter.</h3>
-        <table className={"innerTable"} cellPadding="0px" cellSpacing="0px">
-            <thead>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Actions</th>
-            </thead>
-        {pets.map((pet) => {
-            return (
-                <tr
-                    key={pet._id}
-                >
-                    <td>
-                    <Link to={"/pets/" + pet._id} style={{margin: "10px", textDecoration: "none", fontSize: "20px", color: "darkblue"}}>{pet.name}</Link>
-                    </td>
-                    <td>{pet.type}</td>
-                    <td>
-                        <Link to={`/pets/${pet._id}`} style={{margin: "10px", textDecoration: "none", fontSize: "20px", color: "darkblue"}}>details</Link> | <Link to={`/pets/${pet._id}/edit`} style={{margin: "10px", textDecoration: "none", fontSize: "20px", color: "darkblue"}}>edit</Link>
-                    </td>
-                </tr>
-            );
-        })}
-        </table>
+        <div>
+        <h3 style={{fontSize: "30px"}} className={"text-center"}>Meet our Adoptable Pets!</h3>
+        <div cellPadding="0px" cellSpacing="0px" style={{overflow: "auto", margin: "10px", display: "flex justify-content-between" }}>
+            {pets.map((pet) => {
+                return (
+                    <div
+                        key={pet._id}
+                    >
+                        <div className={"d-flex-column center"}>
+                            <img src={Dog} className="center"/>
+                            <Link to={"/pets/" + pet._id} style={{textDecoration: "none", fontSize: "20px", color: "darkblue"}} className="text-center">{pet.name}</Link>
+                            <p className={"text-left"}>{pet.type}</p>
+                            <Link to={`/pets/${pet._id}`} style={{textDecoration: "none", fontSize: "20px", color: "darkblue"}} className="text-center">Learn More</Link>
+                        </div>
+                    </div>
+                );
+            })}
+        </div>
         </div>
     );
 };

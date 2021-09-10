@@ -8,28 +8,26 @@ PetSchema = new mongoose.Schema(
             minlength: [3, "{PATH} must be at least {MINLENGTH} characters."],
         },
 
+        gender : {
+            type: String,
+            required: [true, "{PATH} is required."]
+        },
+
         type: {
             type: String,
             required: [true, "{PATH} is required."],
             minlength: [3, "{PATH} must be at least {MINLENGTH} characters."],
         },
 
+        fixed : {
+            type: Boolean,
+            required: [true, "{PATH} is required"]
+        },
+
         description : {
             type: String,
             required: [true, "{PATH} is required."],
             minlength: [3, "{PATH} must be at least {MINLENGTH} characters."],
-        },
-
-        skill1 : {
-            type: String,
-        },
-
-        skill2 : {
-            type: String,
-        },
-
-        skill3 : {
-            type: String,
         },
 
         likes: {
