@@ -99,13 +99,16 @@ th {
 }
 
 .overlayText {
-  position: relative !important;
-  top: 50px;
-  left: 50px;
-  color: grey;
+  /* position: relative !important;
+  top: 60px;
+  left: 100px; */
+  text-align: center;
+  background-color: transparent;
+  border-radius: 5px;
+  color: white;
+  font-size: 30px;
   z-index: 5 !important;
   margin: 0px !important;
-  height: auto;
   /* background-color: blue;
   display: flex;
   margin-top: 50px; */

@@ -41,62 +41,18 @@ function App() {
 				<Redirect from="/" to="/pets" noThrow="true" />
 				<NotFound default path="/notFound" />
 			</Router>
-			<ul class="nav justify-content-center bcolor1 p-2 mt-4 p-4 d-flex align-items-center">
-				<img src={Rabbit} class="h-1 w-1 me-4" />
-				<ul class="list-unstyled ms-4">
-					<li class="nav-item">
-						<a class="nav-link text-dark" href="#">
-							Home
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-dark" href="#">
-							Home
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-dark" href="#">
-							Home
-						</a>
-					</li>
-				</ul>
-				<ul class="list-unstyled">
-					<li class="nav-item">
-						<a class="nav-link text-dark" href="#">
-							Adopt
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-dark" href="#">
-							Adopt
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-dark" href="#">
-							Adopt
-						</a>
-					</li>
-				</ul>
-				<ul class="list-unstyled me-4">
-					<li class="nav-item">
-						<a class="nav-link text-dark" href="#">
-							Donate
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-dark" href="#">
-							Donate
-						</a>
-					</li>
-					<li class="nav-item me-4">
-						<a class="nav-link text-dark" href="#">
-							Donate
-						</a>
-					</li>
-				</ul>
-				<img src={Rabbit} class="h-1 w-1 ml-3" />
-			</ul>
-		</div>
+`     <Nav className="justify-content-center bcolor3" style={{height: '100px', marginTop: "0px"}}>
+        <Nav.Item>
+          <Nav.Link href="/home" className="colorW">Location</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="link-1" className="colorW">Contact Us</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="link-2" className="colorW">Careers</Nav.Link>
+        </Nav.Item>
+      </Nav>
+      </div>
 	);
 }
 

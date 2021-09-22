@@ -9,7 +9,7 @@ import Search from '../Img/search-icon.png'
 import Meet from '../Img/human_dog.png'
 import Adopt from '../Img/pet_adoption.png'
 import Doggo from '../Img/doggo_banner.jpeg'
-import {Carousel, Image, Col, Container, Row, Overlay} from 'react-bootstrap';
+import {Carousel, Image, Col, Container, Row, Overlay, Dropdown} from 'react-bootstrap';
 
 
 export class Home extends Component {
@@ -46,69 +46,92 @@ export class Home extends Component {
 						</Col>
 					</Row>
 				</Container>
-					<Container className='d-flex justify-content-center w-100 bcolor2' fluid>
-						<h3 className="mt-4">I'm looking for a...</h3>
+					<Container className='d-flex flex-column align-items-center w-100 bcolor2' fluid>
+						<h3 className="mt-4 colorW">I'm looking for a...</h3>
+						<Dropdown className="mb-4 p-4">
+							<Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary" className="w-100 p-4">
+								Pet Type
+							</Dropdown.Toggle>
+
+							<Dropdown.Menu variant="dark">
+								<Dropdown.Item href="#/action-2">Dog</Dropdown.Item>
+								<Dropdown.Item href="#/action-3">Cat</Dropdown.Item>
+								<Dropdown.Item href="#/action-4">Other</Dropdown.Item>
+							</Dropdown.Menu>
+						</Dropdown>
 					</Container>
-					<Container className="d-flex justify-content-center w-100 bcolor2" fluid>
-					<Row className="w-80">
-						<Col xs={6} md={4}>
-						<img
-								style={{ height: '200px', width: '220px', margin: '50px 50px 50px 50px'}}
-								src={Dog}
-							/>
-							<h5 style={{ textAlign: 'center'}} className="mb-4">Dog</h5>
-						</Col>
-						<Col xs={6} md={4}>
-						<img
-								style={{ height: '200px', width: '220px', margin: '50px 50px 50px 50px'}}
-								src={Cat}
-							/>
-							<h5 style={{ textAlign: 'center'}} className="mb-4">Cat</h5>
-						</Col>
-						<Col xs={6} md={4}>
-						<img
-								style={{ height: '200px', width: '220px', margin: '50px 50px 50px 50px'}}
-								src={Rabbit}
-							/>
-							<h5 style={{ textAlign: 'center'}} className="mb-4">Other</h5>
-						</Col>
-					</Row>
-				</Container>
-				<Container className="w-100" fluid>
-					<p className="overlayText w-100">Featured Pets</p>
-					<Carousel fade interval={5000} keyboard={false} pauseOnHover={true} className="w-100">
-						<Carousel.Item style={{ height: '600px'}}>
-							<img
-								style={{ height: '600px' }}
-								className="d-block w-100"
-								src={'assets/img/banner1.png'}
-							/>
-							<Carousel.Caption>
-								<h3>Luigi</h3>
-							</Carousel.Caption>
-						</Carousel.Item>
-						<Carousel.Item style={{ height: '600px' }}>
-							<img
-								style={{ height: '600px' }}
-								className="d-block w-100"
-								src={'assets/img/banner2.png'}
-							/>
-							<Carousel.Caption>
-								<h3>Stella</h3>
-							</Carousel.Caption>
-						</Carousel.Item>
-						<Carousel.Item style={{ height: '600px' }}>
-							<img
-								style={{ height: '600px' }}
-								className="d-block w-100"
-								src={'assets/img/banner3.png'}
-							/>
-							<Carousel.Caption>
-								<h3>Munch</h3>
-							</Carousel.Caption>
-						</Carousel.Item>
-					</Carousel>
-					</Container>
+					<Container className="d-flex bcolor4 w-100" fluid>
+						<Container className="w-25 rounded shadow d-flex flex-column h-100 bcolor5 p-4" fluid>
+							<p className="overlayText">Featured Pets</p>
+							<Carousel fade interval={5000} keyboard={false} pauseOnHover={true} className="w-100 rounded h-auto">
+								<Carousel.Item style={{ height: '300px', borderRadius: "5px"}} className="rounded">
+									<img
+										style={{ height: '300px' }}
+										className="d-block w-100 rounded"
+										src={'assets/img/banner1.png'}
+									/>
+									<Carousel.Caption>
+										<h3>Luigi</h3>
+									</Carousel.Caption>
+								</Carousel.Item>
+								<Carousel.Item style={{ height: '300px' }}>
+									<img
+										style={{ height: '300px' }}
+										className="d-block w-100 rounded"
+										src={'assets/img/banner2.png'}
+									/>
+									<Carousel.Caption>
+										<h3>Stella</h3>
+									</Carousel.Caption>
+								</Carousel.Item>
+								<Carousel.Item style={{ height: '300px' }}>
+									<img
+										style={{ height: '300px' }}
+										className="d-block w-100 rounded"
+										src={'assets/img/banner3.png'}
+									/>
+									<Carousel.Caption>
+										<h3>Munch</h3>
+									</Carousel.Caption>
+								</Carousel.Item>
+							</Carousel>
+						</Container>
+						<Container className="w-25 rounded shadow d-flex flex-column h-100 bcolor5 p-4" fluid>
+							<p className="overlayText">Volunteer With Us</p>
+							<Carousel fade interval={5000} keyboard={false} pauseOnHover={true} className="w-100 rounded h-auto">
+								<Carousel.Item style={{ height: '300px', borderRadius: "5px"}} className="rounded">
+									<img
+										style={{ height: '300px' }}
+										className="d-block w-100 rounded"
+										src={'assets/img/banner1.png'}
+									/>
+									<Carousel.Caption>
+										<h3>Luigi</h3>
+									</Carousel.Caption>
+								</Carousel.Item>
+								<Carousel.Item style={{ height: '300px' }}>
+									<img
+										style={{ height: '300px' }}
+										className="d-block w-100 rounded"
+										src={'assets/img/banner2.png'}
+									/>
+									<Carousel.Caption>
+										<h3>Stella</h3>
+									</Carousel.Caption>
+								</Carousel.Item>
+								<Carousel.Item style={{ height: '300px' }}>
+									<img
+										style={{ height: '300px' }}
+										className="d-block w-100 rounded"
+										src={'assets/img/banner3.png'}
+									/>
+									<Carousel.Caption>
+										<h3>Munch</h3>
+									</Carousel.Caption>
+								</Carousel.Item>
+							</Carousel>
+						</Container>
+						</Container>
 				</div>
 			</div>
 		);
