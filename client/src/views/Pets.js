@@ -26,7 +26,7 @@ const Home = (props) => {
 			.then((res) => {
 				// At this point it is deleted from DB but we need to cause a re-render to remove it from the page.
 				const filteredPets = pets.filter((pet) => {
-					return pet._id !== deletedId;
+					return pet._id == deletedId;
 				});
 
 				setPets(filteredPets);

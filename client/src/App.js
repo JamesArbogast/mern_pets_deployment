@@ -9,6 +9,7 @@ import Pet from './views/Pet';
 import NewPet from './views/NewPet';
 import EditPet from './views/EditPet';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Navbar, Nav, NavDropdown, Container} from 'react-bootstrap'
 import Cat from '../src/Img/whitecat150.png';
 import Dog from '../src/Img/dog150.png';
 import Rabbit from '../src/Img/rabbit100.png';
@@ -16,25 +17,21 @@ import Rabbit from '../src/Img/rabbit100.png';
 function App() {
 	return (
 		<div>
-			<ul class="nav justify-content-center bcolor1 p-2 mb-3 d-flex align-items-center">
-				<img src={Cat} class="h-1 w-1" />
-				<li class="nav-item h4">
-					<a class="nav-link text-dark" href="/home">
-						Home
-					</a>
-				</li>
-				<li class="nav-item h4">
-					<a class="nav-link text-dark" href="#">
-						Adopt
-					</a>
-				</li>
-				<li class="nav-item h4">
-					<a class="nav-link text-dark" href="#">
-						Donate
-					</a>
-				</li>
-				<img src={Dog} class="h-1 w-1" />
-			</ul>
+    <Navbar collapseOnSelect expand="lg" className="color1">
+      <Container>
+      <Navbar.Brand href="#home">Pet Adoption Site</Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link href="#features">Home</Nav.Link>
+          <Nav.Link href="#pricing">Adopt</Nav.Link>
+          <Nav.Link href="#pricing">Learn</Nav.Link>
+          <Nav.Link href="#pricing">About Us</Nav.Link>
+          <Nav.Link href="#pricing">Donate</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+      </Container>
+    </Navbar>
 			<Router>
 				<Pets path="/pets" />
 				<Home path="/home" />
