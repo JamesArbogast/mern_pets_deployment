@@ -17,24 +17,24 @@ import Rabbit from '../src/Img/rabbit100.png';
 function App() {
 	return (
 		<div>
-    <Navbar collapseOnSelect expand="lg" className="color1">
+    <Navbar collapseOnSelect expand="lg" className="bcolor3">
       <Container>
-      <Navbar.Brand href="#home">Pet Adoption Site</Navbar.Brand>
+      <Navbar.Brand href="#home" style={{color: "white"}}>Pet Adoption Site</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#features">Home</Nav.Link>
-          <Nav.Link href="#pricing">Adopt</Nav.Link>
-          <Nav.Link href="#pricing">Learn</Nav.Link>
-          <Nav.Link href="#pricing">About Us</Nav.Link>
-          <Nav.Link href="#pricing">Donate</Nav.Link>
+          <Nav.Link href="#features" style={{color: "white"}}>Home</Nav.Link>
+          <Nav.Link href="#pricing" style={{color: "white"}}>Adopt</Nav.Link>
+          <Nav.Link href="#pricing" style={{color: "white"}}>Learn</Nav.Link>
+          <Nav.Link href="#pricing" style={{color: "white"}}>About Us</Nav.Link>
+          <Nav.Link href="#pricing" style={{color: "white"}}>Donate</Nav.Link>
         </Nav>
       </Navbar.Collapse>
       </Container>
     </Navbar>
-			<Router>
+			<Router className="w-100" fluid>
 				<Pets path="/pets" />
-				<Home path="/home" />
+				<Home path="/home"/>
 				<Pet path="/pets/:id" />
 				<EditPet path="/pets/:id/edit" />
 				<NewPet path="/pets/new" />

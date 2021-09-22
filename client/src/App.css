@@ -79,6 +79,9 @@ th {
   background-color: #1A92A7;
 }
 
+.colorW {
+  color: white;
+}
 .color1 {
   background-color: #9DFBBB;
 }
@@ -95,5 +98,10 @@ th {
   color: #1A92A7;
 }
 
+.overlayText {
+  position: 'absolute';
+  top: '50%';
+  left: '50%'
+}
 
 
