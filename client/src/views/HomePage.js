@@ -74,7 +74,9 @@ export class Home extends Component {
 						</Col>
 					</Row>
 				</Container>
-					<Carousel interval={5000} keyboard={false} pauseOnHover={true} className="w-100">
+				<Container className="w-100" fluid>
+					<p className="overlayText w-100">Featured Pets</p>
+					<Carousel fade interval={5000} keyboard={false} pauseOnHover={true} className="w-100">
 						<Carousel.Item style={{ height: '600px'}}>
 							<img
 								style={{ height: '600px' }}
@@ -82,7 +84,7 @@ export class Home extends Component {
 								src={'assets/img/banner1.png'}
 							/>
 							<Carousel.Caption>
-								<h3>Search</h3>
+								<h3>Luigi</h3>
 							</Carousel.Caption>
 						</Carousel.Item>
 						<Carousel.Item style={{ height: '600px' }}>
@@ -92,7 +94,7 @@ export class Home extends Component {
 								src={'assets/img/banner2.png'}
 							/>
 							<Carousel.Caption>
-								<h3>Meet</h3>
+								<h3>Stella</h3>
 							</Carousel.Caption>
 						</Carousel.Item>
 						<Carousel.Item style={{ height: '600px' }}>
@@ -102,10 +104,11 @@ export class Home extends Component {
 								src={'assets/img/banner3.png'}
 							/>
 							<Carousel.Caption>
-								<h3>Adopt</h3>
+								<h3>Munch</h3>
 							</Carousel.Caption>
 						</Carousel.Item>
 					</Carousel>
+					</Container>
 				</div>
 			</div>
 		);
