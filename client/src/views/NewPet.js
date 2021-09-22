@@ -19,9 +19,6 @@ const NewPet = (props) => {
             name: name,
             type: type,
             description: description,
-            skill1 : skill1,
-            skill2 : skill2,
-            skill3 : skill3
         };
 
         axios
