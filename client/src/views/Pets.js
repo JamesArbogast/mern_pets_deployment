@@ -37,7 +37,39 @@ const Home = (props) => {
 	};
 
 	return (
-		<div className={'table'}>
+		<div className="container">
+			<h3 className="text-center">These pets are looking for new homes.</h3>{' '}
+			<hr />
+			<div className="row">
+				<div className="col-sm-12 d-flex">
+					{pets.map((pet) => {
+						return (
+							<div key={pet._id} className="card col-sm-3 m-3">
+								<Link to={'/pets/' + pet._id}>
+									<img
+										className="card-img-top"
+										style={{ objectFit: 'cover', height: 300 }}
+										src={pet.src}
+										alt="pet picture"
+									/>
+								</Link>
+								<div className="card-body">
+									<h4 className="card-title">{pet.name}</h4>
+									<p>{pet.header}</p>
+								</div>
+								<ul className="list-group list-group-flush">
+									<li className="list-group-item">{pet.age}</li>
+								</ul>
+								<div className="card-body">
+									<Link to={'/pets/' + pet._id}>
+										<a href="#">Details</a>
+									</Link>
+								</div>
+							</div>
+						);
+					})}
+				</div>
+			</div>
 			<h3 style={{ marginLeft: '85px', fontSize: '30px' }}>
 				These pets are looking for a shelter.
 			</h3>
