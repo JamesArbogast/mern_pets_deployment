@@ -38,6 +38,18 @@ module.exports = {
             });
     },
 
+    getDogs(req, res) {
+        console.log("getDogs method excuted", "url params", req.params)
+        
+        Pet.find( {type: 'dog'} )
+        .then((pet) => {
+            res.json(pet);
+        })
+        .catch((err) => {
+            res.status(400).json(err);
+        });
+    },
+
     delete(req, res) {
         console.log("delete method executed", "url params", req.params);
 

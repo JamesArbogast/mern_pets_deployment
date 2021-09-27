@@ -4,21 +4,37 @@ import { Link, navigate } from '@reach/router';
 import '../App.css';
 
 const Home = (props) => {
+	const [allPets, setAllPets] = useState([]);
 	const [pets, setPets] = useState([]);
+	const [filterFor, setFilterFor] = useState('');
+	const [filterBy, setFilterBy] = useState('type');
 
 	useEffect(() => {
 		axios
 			.get('http://localhost:5000/api/pets')
 			.then((res) => {
 				const sortedPets = res.data.sort((a, b) =>
-					a.type.localeCompare(b.type)
+					a.name.localeCompare(b.name)
 				);
-				setPets(sortedPets);
+				setAllPets(sortedPets);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
 	}, []);
+
+	useEffect(() => {
+		const search = () => {
+			if(filterFor === '') {
+				return setAllPets(allPets);
+						}
+			const filterPets = allPets.filter((pts) => {
+				return pts[filterBy]
+			});
+			setPets(filterPets);
+	}
+	search(); 
+}, [filterFor, filterBy, allPets]);
 
 	const handleDelete = (deletedId) => {
 		axios
@@ -39,10 +55,26 @@ const Home = (props) => {
 	return (
 		<div className="container">
 			<h3 className="text-center">These pets are looking for new homes.</h3>{' '}
+			<div className="row mb-5">
+          <div className="col-md from-group">
+            <label>Search By</label>
+            <select
+              onChange={(e) => {
+            	setFilterBy(e.target.value);
+							setFilterFor(e.target.value);
+              }}
+              className="form-control"
+              value={filterBy}
+            >
+              <option value="Dog">Dogs</option>
+              <option value="Cat">Cats</option>
+            </select>
+          </div>
+        </div>
 			<hr />
 			<div className="row">
 				<div className="col-sm-12 d-flex">
-					{pets.map((pet) => {
+					{allPets.map((pet) => {
 						return (
 							<div key={pet._id} className="card col-sm-3 m-3">
 								<Link to={'/pets/' + pet._id}>
@@ -70,7 +102,7 @@ const Home = (props) => {
 					})}
 				</div>
 			</div>
-			<h3 style={{ marginLeft: '85px', fontSize: '30px' }}>
+			{/* <h3 style={{ marginLeft: '85px', fontSize: '30px' }}>
 				These pets are looking for a shelter.
 			</h3>
 			<table className={'innerTable'} cellPadding="0px" cellSpacing="0px">
@@ -124,8 +156,8 @@ const Home = (props) => {
 						</tr>
 					);
 				})}
-			</table>
-		</div>
+			</table>*/}
+		</div> 
 	);
 };
 

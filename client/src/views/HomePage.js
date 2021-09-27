@@ -49,14 +49,13 @@ export class Home extends Component {
 					<Container className='d-flex flex-column align-items-center w-100 bcolor2' fluid>
 						<h3 className="mt-4 colorW">I'm looking for a...</h3>
 						<Dropdown className="mb-4 p-4">
-							<Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary" className="w-100 p-4">
+							<Dropdown.Toggle id="dropdown-button-dark-example1" variant="light" className="w-100 p-4">
 								Pet Type
 							</Dropdown.Toggle>
-
-							<Dropdown.Menu variant="dark">
-								<Dropdown.Item href="#/action-2">Dog</Dropdown.Item>
-								<Dropdown.Item href="#/action-3">Cat</Dropdown.Item>
-								<Dropdown.Item href="#/action-4">Other</Dropdown.Item>
+							<Dropdown.Menu variant="light">
+								<Dropdown.Item href="/pets/dogs">Dog</Dropdown.Item>
+								<Dropdown.Item href="/api/pets/cats">Cat</Dropdown.Item>
+								<Dropdown.Item href="/api/pets/other">Other</Dropdown.Item>
 							</Dropdown.Menu>
 						</Dropdown>
 					</Container>
